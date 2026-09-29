@@ -1,0 +1,90 @@
+/* Compact desktop workspace. Smaller screens keep the original reading flow. */
+@media (min-width: 1000px) {
+  .site-header { height: 64px; }
+  .header-inner, .footer-inner { padding-inline: 28px; }
+  main { padding: 12px 28px 0; }
+  .page-heading { margin-bottom: 12px; }
+  .page-heading > div { display: flex; flex-wrap: wrap; align-items: center; column-gap: 24px; row-gap: 8px; }
+  .eyebrow { margin: 0; }
+  .intro { margin: 0; line-height: 1.4; }
+  .workspace-grid { grid-template-columns: 292px minmax(0, 1fr); gap: 16px; }
+  .upload-panel { position: static; padding: 16px; }
+  .upload-panel > .section-label { margin-bottom: 12px; }
+  .dropzone {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    column-gap: 10px;
+    align-items: center;
+    min-height: 0;
+    padding: 14px 12px;
+    text-align: left;
+  }
+  .upload-icon { grid-column: 1; grid-row: 1 / 3; width: 34px; height: 38px; margin: 0; font-size: 26px; }
+  .drop-title, .drop-caption { grid-column: 2; }
+  .drop-caption { margin: 3px 0 0; }
+  .file-control { grid-column: 1 / -1; min-height: 40px; margin-top: 12px; justify-self: stretch; }
+  .formats { grid-column: 1 / -1; margin: 8px 0 0; line-height: 1.65; text-align: center; }
+  .convert-options { margin: 14px 0; }
+  .check-row { margin-top: 10px; }
+  .option-note { margin-top: 3px; line-height: 1.55; }
+  .primary-button { height: 44px; }
+  .sample-link { margin-top: 12px; padding-top: 8px; }
+  .sample-link button { min-height: 32px; }
+  .reading-workspace {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+    grid-template-rows: auto auto auto minmax(180px, 1fr) auto auto;
+    grid-template-areas:
+      'toolbar toolbar'
+      'document document'
+      'coverage navigation'
+      'comparison comparison'
+      'playback playback'
+      'note note';
+    height: max(542px, calc(100dvh - 176px));
+  }
+  .result-toolbar { grid-area: toolbar; padding: 10px 18px; }
+  .document-bar { grid-area: document; padding: 2px 18px; }
+  .coverage { grid-area: coverage; padding: 10px 18px; display: flex; align-items: center; font-size: 13px; }
+  .reader-navigation { grid-area: navigation; padding: 4px 18px 4px 12px; gap: 8px; background: #f5f6fb; }
+  .reader-navigation select { max-width: 190px; min-width: 100px; padding: 6px; }
+  .comparison { grid-area: comparison; min-height: 0; min-width: 0; grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); }
+  .comparison.reading-only { grid-template-columns: minmax(0, 1fr); }
+  .source-pane, .narrative-pane { min-height: 0; overflow: hidden; }
+  .source-pane { border-right: 1px solid var(--border); border-bottom: 0; }
+  .pane-label { padding: 8px 16px; flex-shrink: 0; }
+  .source-content, .narrative-content { padding: 12px 16px; min-height: 0; max-height: none; overflow: auto; scrollbar-gutter: stable; scroll-padding: 12px; }
+  .source-content:focus-visible, .narrative-content:focus-visible { outline-offset: -3px; }
+  .source-content h4 { margin-bottom: 6px; }
+  .source-block { margin-bottom: 12px; }
+  .source-content caption { padding: 4px 8px; }
+  .source-content th, .source-content td { padding-block: 5px; }
+  .source-footnote { flex-shrink: 0; font-size: 13px; line-height: 1.55; padding: 8px 16px 10px; border-top: 1px solid var(--border); }
+  .narrative-content .reading-entry { padding: 8px 8px 8px 12px; margin-bottom: 8px; }
+  .reading-entry:has(> h4, > h5, > h6) { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 8px; }
+  .reading-entry > :is(h4, h5, h6) { margin: 0; }
+  .reading-entry:has(> h4, > h5, > h6) .entry-actions { margin: 0; }
+  .entry-actions { margin-top: 4px; }
+  .playback-bar { grid-area: playback; padding: 8px 12px; gap: 6px; }
+  .audio-controls { gap: 4px; }
+  .export-controls { gap: 2px; }
+  .export-controls button { padding-inline: 7px; min-height: 40px; }
+  .voice-note { grid-area: note; padding: 0 18px 10px; }
+  .site-footer { margin-top: 14px; }
+  .footer-inner { min-height: 46px; }
+  .site-footer .footer-brand { font-size: 16px; }
+  .site-footer .footer-brand .mark { width: 19px; height: 19px; }
+}
+@media (min-width: 1000px) and (max-width: 1180px) {
+  .workspace-grid { grid-template-columns: 292px minmax(0, 1fr); gap: 14px; }
+  .header-inner, .footer-inner { padding-inline: 20px; }
+  main { padding-inline: 20px; }
+  .dropzone { grid-template-columns: minmax(0, 1fr); }
+  .upload-icon { display: none; }
+  .drop-title, .drop-caption { grid-column: 1; }
+  .result-toolbar, .document-bar { padding-inline: 14px; }
+  .coverage { padding-inline: 14px; }
+  .reader-navigation { padding-inline: 10px; }
+  .reader-navigation select { max-width: 144px; }
+  .source-content, .narrative-content { padding-inline: 12px; }
+}
